@@ -45,15 +45,7 @@ After completing this series, you're ready for the **hands-on project course**:
 - CI/CD with Declarative Automation Bundles
 - Unity Catalog Governance & Security
 
-## ⚠️ Known Spark Connect Constraints
 
-These are specific to Spark Connect (DBR 17.3) and documented in the notebooks:
-- `otherwise` is NOT importable — it's a Column method: `when().otherwise()`
-- `broadcast()` function not supported — use SQL hints `/*+ BROADCAST(table) */`
-- `sum` must be imported as alias: `from pyspark.sql.functions import sum as spark_sum`
-- Delta sink does NOT support `update` output mode — use `memory` sink or `foreachBatch`
-- Array index `col("items")[0]` fails on empty arrays — use `try_element_at(items, 1)`
-- `to_date()` throws on non-matching formats — use `try_to_date()` in production
 
 ---
 
